@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/js/commons/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/css/mng/index.css" media="all">
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-main">
+                <a href="#" style="position: absolute; top: 21px; color: #fff; font-size: 15px;">
+                    深圳市不动产登记中心内网信息门户
+                </a>
+                <ul class="layui-nav layui-layout-left" style="padding-left: 70px;">
+                    <li class="layui-nav-item"><span id="currentDate"></span></li>
+                </ul>
+                <ul class="layui-nav layui-layout-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <span class="layui-icon layui-icon-username" />
+                            <span th:text="${session.user.username}" />
+                        </a>
+                    </li>
+                    <li class="layui-nav-item"><a href="/api/user/index">信息门户网站首页</a></li>
+                    <li class="layui-nav-item"><a href="javascript:;" onclick="updatePwd()">修改密码</a></li>
+                    <li class="layui-nav-item"><a href="javascript:;" onclick="logout();">安全退出</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item" th:each="res:${session.menu}">
+                        <a class="" href="javascript:;"><span th:text="${res.resName}"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd th:each="child:${res.childResourceList}">
+                                <a href="javascript:;" th:text="${child.resName}" data-th-onclick="newTab([[${child.resCode}]], [[${child.resName}]], [[${child.url}]])"></a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div class="layui-tab layui-tab-brief" lay-filter="maintab" lay-allowclose="true">
+                <ul class="layui-tab-title">
+<!--                    <li class="layui-this" lay-id="tabindex">主页</li>-->
+                </ul>
+                <div class="layui-tab-content">
+<!--                    <div class="layui-tab-item layui-show">主页</div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-footer"></div>
+    </div>
+</body>
+</html>
+<script charset="utf-8" src="/js/commons/layui/layui.all.js" ></script>
+<script charset="utf-8" src="/js/commons/jquery.js"></script>
+<script src="/js/mng/index.js"></script>

@@ -1,0 +1,12 @@
+/** 关闭底部 */
+.layui-body {
+    bottom: initial;
+}
+
+.layui-layout-admin .layui-body {
+    bottom: initial;
+}
+
+.layui-layout-admin .layui-footer {
+    display: none;
+}

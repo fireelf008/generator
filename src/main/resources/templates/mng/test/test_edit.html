@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8">
+    <title>编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/js/commons/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/css/commons/base.css" media="all">
+    <link rel="stylesheet" href="/css/mng/test/test_edit.css" media="all">
+</head>
+<body>
+<form id="dataForm" name="dataForm" lay-filter="dataForm" class="layui-form layui-form-pane" style="padding: 15px">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">id</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="id" name="id" autocomplete="off" th:value="${test.id}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="username" name="username" autocomplete="off" th:value="${test.username}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="password" name="password" autocomplete="off" th:value="${test.password}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">密码盐</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="salt" name="salt" autocomplete="off" th:value="${test.salt}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">真实姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="realName" name="realName" autocomplete="off" th:value="${test.realName}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">生日</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="birthday" name="birthday" autocomplete="off" th:value="${test.birthday}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">性别，0男，1女</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="sex" name="sex" autocomplete="off" th:value="${test.sex}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">注册时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="regTime" name="regTime" autocomplete="off" th:value="${test.regTime}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">注册ip</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="regIp" name="regIp" autocomplete="off" th:value="${test.regIp}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">电话</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="phone" name="phone" autocomplete="off" th:value="${test.phone}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">最后登录时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="lastTime" name="lastTime" autocomplete="off" th:value="${test.lastTime}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">最后登录ip</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="lastIp" name="lastIp" autocomplete="off" th:value="${test.lastIp}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">是否是超级管理员，0不是1是</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="admin" name="admin" autocomplete="off" th:value="${test.admin}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="remark" name="remark" autocomplete="off" th:value="${test.remark}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">创建人</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="createName" name="createName" autocomplete="off" th:value="${test.createName}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">创建时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="createTime" name="createTime" autocomplete="off" th:value="${test.createTime}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">修改人</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="updateName" name="updateName" autocomplete="off" th:value="${test.updateName}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">修改时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="updateTime" name="updateTime" autocomplete="off" th:value="${test.updateTime}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">数据是否可用，0不可用，1可用</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="enable" name="enable" autocomplete="off" th:value="${test.enable}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">版本号</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="version" name="version" autocomplete="off" th:value="${test.version}">
+            </div>
+        </div>
+    </div>
+    <button type="button" class="layui-btn" lay-filter="submitBtn" style="display:none;" lay-submit="" id="submitBtn" name="submitBtn">保存</button>
+</form>
+</body>
+</html>
+<script charset="utf-8" src="/js/commons/layui/layui.all.js" ></script>
+<script charset="utf-8" src="/js/commons/jquery.js"></script>
+<script src="/js/mng/test/test_edit.js"></script>

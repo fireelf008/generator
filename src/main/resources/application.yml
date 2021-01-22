@@ -1,0 +1,43 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      timeout: 120m
+logging:
+  file:
+    name: D:/log/generator.log
+  level:
+    root: info
+spring:
+  application:
+    name: 'generator'
+  aop:
+    auto: true
+  profiles:
+    active: ${env}
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+    servlet:
+      content-type: text/html
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+      date: yyyy-MM-dd
+      time: HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  devtools:
+    restart:
+      enabled: true
+  freemarker:
+    suffix: ftl

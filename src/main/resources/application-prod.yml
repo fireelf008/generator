@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wsf?autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&autoReconnect=true&rewriteBatchedStatements=true&useConfigs=maxPerformance
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 100
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: select 1 from dual
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
